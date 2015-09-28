@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<project default="main">
+
+	<property name="plugin.name" value="getsnr" />
+	<property name="plugin.short.dir" value="getsnr" />
+	<property name="plugin.lib" value="${plugin.short.dir}.jar" />
+	<property name="plugin.dir" value="mrui/preprocessing/${plugin.short.dir}" />
+
+	<target name="main" depends="clean, compile, libs" description="Create ${plugin.name}">
+
+	</target>
+
+	<!-- clean the project -->
+	<target name="clean" description="Clean sources">
+		<echo message="Cleaning ${plugin.name} ..." />
+		<delete includeemptydirs="true">
+			<fileset dir="${bin}" includes="${plugin.dir}/**" />
+		</delete>
+	</target>
+
+	<!-- compile the java sources -->
+	<target name="compile" description="Compile sources">
+		<echo message="Compiling ${plugin.name} ... ${plugins.class.path} " />
+		<javac srcdir="src" destdir="${bin}" classpath="${plugins.class.path}">
+			<include name="${plugin.dir}/**/*.java" />
+		</javac>
+	</target>
+
+	<!-- create java library and distribute to kernel project  -->
+	<target name="libs" description="Create libraries">
+		<echo message="Creating library ${plugin.name} ..." />
+		<jar destfile="${dist}/${plugin.lib}">
+			<fileset dir="${bin}/" includes="${plugin.dir}/**/*.class" />
+			<fileset dir="${src}/" includes="${plugin.dir}/**/*.properties" />
+		</jar>
+	</target>
+
+	<!-- obfuscate the library -->
+	<target name="obfuscate" description="Create install package">
+		<echo>Obfuscating...</echo>
+		<taskdef resource="proguard/ant/task.properties" classpath="${proguard}/proguard.jar" />
+		<proguard configuration="${proguard}/mrui.pro">
+			<libraryjar path="${rt.lib}" />
+			<injar location="" />
+		</proguard>
+		<move file="${proguard}/${mrui.lib}" tofile="${dist}/${plugin.lib}" />
+	</target>
+</project>

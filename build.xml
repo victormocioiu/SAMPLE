@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<project default="main">
+
+	<!-- directories -->
+	<property name="src" value="src" />
+	<property name="bin" value="bin" />
+	<property name="lib" value="../jMruiKernel/lib/" />
+	<property name="dicom" value="../jMruiKernel/dicom/" />
+	<property name="proguard" value="../jMruiKernel/proguard" />
+	<property name="plugins" value="plugins" />
+	<property name="dist" value="../jMruiKernel/plugins" />
+	<property name="kernel" value="../jMruiKernel" />
+	<property name="native" value="../jMruiNative" />
+
+	<!-- classpath -->
+	<path id="plugins.class.path">
+		<fileset dir="${dicom}/">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${lib}/">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="../jMruiKernel/lib/">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<property name="plugins.class.path" refid="plugins.class.path" />
+	
+	<target name="main" depends="init" description="Launch plugins build files">
+		<echo>Launch plugins build files</echo>
+		<!-- conversion -->
+		<ant antfile="${plugins}/conv.ascii.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.jmruiv3.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.bruker.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.ge.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.matlab.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.ml.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.philips.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.rdb.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.siemens.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.smis.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.txt.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.varian.build.xml" target="main" />
+		<ant antfile="${plugins}/conv.newge.build.xml" target="main" />
+		<!-- preprocessing -->
+		<ant antfile="${plugins}/prepro.addfid.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.apodize.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.cadzow.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.closefid.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.conjugate.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.convolution.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.dccorrect.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.divide.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.echotofid.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.erfilter.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.multiply.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.groupdelay.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.phase.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.shift.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.substract.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.sum.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.svdfilter.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.svdref.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.truncate.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.zerofilling.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.normalize.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.baselinegabrmn.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.settozero.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.spectralalign.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.unitlengthnormalisation.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.interp.build.xml" target="main" />
+		<ant antfile="${plugins}/prepro.getsnr.build.xml" target="main" />
+		
+		<!-- quantitation -->
+		<ant antfile="${plugins}/quant.amares.build.xml" target="main" />
+		<ant antfile="${plugins}/quant.aqses.build.xml" target="main" />
+		<ant antfile="${plugins}/quant.lpsvd.build.xml" target="main" />
+		<ant antfile="${plugins}/quant.quest.build.xml" target="main" />
+		<ant antfile="${plugins}/quant.svd.build.xml" target="main" />
+		<!-- custom -->
+		<ant antfile="${plugins}/custom.healthagents.build.xml" target="main" />
+		<ant antfile="${plugins}/custom.braintemperature.build.xml" target="main" />
+		
+		<ant antfile="${plugins}/custom.data2D.build.xml" target="main" />
+		<ant antfile="${plugins}/custom.clinical.build.xml" target="main" />
+		<ant antfile="${plugins}/custom.gabor.build.xml" target="main" />
+		<ant antfile="${plugins}/custom.nmrscopeb.build.xml" target="main" />
+		<ant antfile="${plugins}/custom.jmrui2xml.build.xml" target="main" />
+		<ant antfile="${plugins}/custom.spectraclassifier.build.xml" target="main" />
+		<ant antfile="${plugins}/custom.DSS.build.xml" target="main" />
+	</target>
+
+	<target name="init">
+		<echo>Init plugins...</echo>
+		<mkdir dir="${bin}" />
+	</target>
+</project>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/.svn/**" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/jMruiKernel"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-export-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-graphics2d-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-graphicsio-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-graphicsio-emf-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-graphicsio-java-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-graphicsio-pdf-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-graphicsio-ps-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-graphicsio-svg-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-graphicsio-swf-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-graphicsio-tests-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-io-2.0.2.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-swing-2.0.3.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-util-2.0.2.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/freehep/freehep-xml-2.1.1.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/lib/BrowserLauncher2-1_3.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/lib/javastat.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/lib/king.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/lib/statgraphics_1.3.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/lib/weka.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="src/mrui/custom/DSS/lib/commons-math-1.2.jar"/>
+	<classpathentry kind="lib" path="src/mrui/custom/DSS/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="src/mrui/custom/DSS/lib/ij.jar"/>
+	<classpathentry kind="lib" path="src/mrui/custom/DSS/lib/JDMS.jar"/>
+	<classpathentry kind="lib" path="src/mrui/custom/DSS/lib/VisualNumerics.jar"/>
+	<classpathentry kind="lib" path="/jMruiKernel/lib/Jama-1.0.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
